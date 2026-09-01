@@ -96,8 +96,14 @@ class HomeController extends Controller
             ->merge($recentMaintenance)
             ->merge($recentElectricity)
             ->sortByDesc('date')
-            ->take(10);
+            ->take(10)
+            ->values();
 
-        return view('home', compact('stats', 'recentReceipts'));
+        // Featured property for the overview panel (prefer an occupied one)
+        $featuredProperty = Property::with(['owner', 'tenant'])
+            ->orderByRaw("status = 'occupied' DESC")
+            ->first();
+
+        return view('home', compact('stats', 'recentReceipts', 'featuredProperty'));
     }
 }

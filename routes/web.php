@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
 
     // Admin only
     Route::middleware('role:admin')->group(function () {
+        Route::resource('users', App\Http\Controllers\UserController::class)->except(['show']);
         Route::resource('owners', OwnerController::class);
         Route::resource('tenants', TenantController::class);
         Route::resource('properties', PropertyController::class);

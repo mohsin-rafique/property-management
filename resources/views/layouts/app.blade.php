@@ -49,7 +49,9 @@
         /* Sidebar */
         .sidebar {
             width: 260px;
+            height: 100vh;
             min-height: 100vh;
+            overflow-y: auto;
             background: var(--sidebar-bg);
             position: fixed;
             left: 0;
@@ -449,6 +451,689 @@
             border-color: var(--accent);
             color: #fff;
         }
+
+        /* ============================================
+           TOP BAR — search + notifications
+        ============================================ */
+        .top-search {
+            position: relative;
+            flex: 1;
+            max-width: 420px;
+        }
+
+        .top-search .bi-search {
+            position: absolute;
+            left: .875rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: .9rem;
+        }
+
+        .top-search input {
+            width: 100%;
+            border: 1px solid var(--border-color);
+            background: var(--body-bg);
+            border-radius: .625rem;
+            padding: .55rem 2.75rem .55rem 2.5rem;
+            font-size: .875rem;
+            color: var(--text-primary);
+            transition: all .15s ease;
+        }
+
+        .top-search input:focus {
+            outline: none;
+            background: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+        }
+
+        .top-search .kbd {
+            position: absolute;
+            right: .625rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: .7rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: .375rem;
+            padding: .1rem .4rem;
+        }
+
+        .notif-btn {
+            position: relative;
+            width: 42px;
+            height: 42px;
+            border-radius: .625rem;
+            border: 1px solid var(--border-color);
+            background: #fff;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            transition: all .15s ease;
+        }
+
+        .notif-btn:hover {
+            background: var(--body-bg);
+            color: var(--primary);
+        }
+
+        .notif-btn .notif-dot {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            min-width: 18px;
+            height: 18px;
+            padding: 0 4px;
+            border-radius: 9px;
+            background: var(--primary);
+            color: #fff;
+            font-size: .65rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
+
+        .user-menu .user-name {
+            line-height: 1.15;
+        }
+
+        .user-menu .user-name .name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: .875rem;
+        }
+
+        .user-menu .user-name .role {
+            font-size: .72rem;
+            color: var(--text-muted);
+        }
+
+        /* ============================================
+           PROFILE DROPDOWN MENU
+        ============================================ */
+        .profile-menu {
+            width: 320px;
+            padding: 0;
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px -12px rgba(15, 23, 42, .22);
+            overflow: hidden;
+            margin-top: .5rem;
+        }
+
+        .pm-header {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            padding: 1.1rem 1.15rem;
+            margin: .55rem;
+            border-radius: .8rem;
+            background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+            color: #fff;
+        }
+
+        .pm-header .pm-avatar {
+            width: 46px;
+            height: 46px;
+            min-width: 46px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .18);
+            border: 1px solid rgba(255, 255, 255, .35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .pm-header .pm-name {
+            font-weight: 700;
+            font-size: .95rem;
+            line-height: 1.2;
+        }
+
+        .pm-header .pm-role {
+            font-size: .75rem;
+            color: rgba(255, 255, 255, .8);
+        }
+
+        .pm-header .pm-email {
+            font-size: .75rem;
+            color: rgba(255, 255, 255, .8);
+            margin-top: .15rem;
+            word-break: break-all;
+        }
+
+        .pm-body {
+            padding: .35rem .55rem;
+        }
+
+        .pm-item {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            padding: .6rem .6rem;
+            border-radius: .6rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: background .15s ease;
+        }
+
+        .pm-item:hover {
+            background: var(--body-bg);
+        }
+
+        .pm-item .pm-ico {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            border-radius: .55rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .pm-item .pm-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .pm-item .pm-title {
+            font-weight: 600;
+            font-size: .875rem;
+            line-height: 1.2;
+        }
+
+        .pm-item .pm-desc {
+            font-size: .74rem;
+            color: var(--text-muted);
+        }
+
+        .pm-item .pm-arrow {
+            color: var(--text-muted);
+            font-size: .8rem;
+        }
+
+        .pm-item.logout {
+            color: #dc2626;
+        }
+
+        .pm-item.logout .pm-ico {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .pm-item.logout .pm-desc {
+            color: #f87171;
+        }
+
+        .pm-divider {
+            height: 1px;
+            background: var(--border-color);
+            margin: .35rem .6rem;
+        }
+
+        .pm-premium {
+            margin: .3rem .55rem .6rem;
+            padding: .9rem;
+            border-radius: .75rem;
+            background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+            border: 1px solid #e0e7ff;
+        }
+
+        .pm-premium .pm-premium-title {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            font-weight: 700;
+            font-size: .85rem;
+            color: #4338ca;
+        }
+
+        .pm-premium .pm-premium-title .bi-star-fill {
+            color: #f59e0b;
+        }
+
+        .pm-premium .pm-premium-sub {
+            font-size: .74rem;
+            color: var(--text-muted);
+            margin: .2rem 0 .7rem;
+        }
+
+        .pm-premium .btn-premium {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            color: #fff;
+            font-weight: 600;
+            font-size: .8rem;
+            padding: .5rem;
+            border-radius: .5rem;
+            text-decoration: none;
+            transition: opacity .15s ease;
+        }
+
+        .pm-premium .btn-premium:hover {
+            opacity: .9;
+        }
+
+        /* ============================================
+           DASHBOARD — hero header
+        ============================================ */
+        .dash-hero h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .dash-hero p {
+            color: var(--text-muted);
+            font-size: .9rem;
+            margin: .25rem 0 0;
+        }
+
+        /* ============================================
+           DASHBOARD — metric cards (row 1)
+        ============================================ */
+        .metric-card {
+            padding: 1.25rem 1.35rem;
+            height: 100%;
+        }
+
+        .metric-top {
+            display: flex;
+            align-items: center;
+            gap: .9rem;
+        }
+
+        .metric-icon {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+        }
+
+        .metric-label {
+            font-size: .8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .metric-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .metric-foot {
+            margin-top: .9rem;
+            padding-top: .75rem;
+            border-top: 1px dashed var(--border-color);
+            font-size: .78rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            flex-wrap: wrap;
+        }
+
+        .dot-stat {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            font-weight: 500;
+        }
+
+        .dot-stat::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        /* ============================================
+           DASHBOARD — bill cards (row 2)
+        ============================================ */
+        .bill-card {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            height: 100%;
+        }
+
+        .bill-card .metric-value {
+            font-size: 1.75rem;
+            margin: .15rem 0 .25rem;
+        }
+
+        .bill-card .metric-sub {
+            font-size: .78rem;
+            color: var(--text-muted);
+        }
+
+        .bill-icon {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            border-radius: .85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        /* ============================================
+           DASHBOARD — section cards
+        ============================================ */
+        .section-card .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .section-card .card-title {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .section-card .card-title i {
+            color: var(--primary);
+        }
+
+        .btn-viewall {
+            font-size: .8rem;
+            font-weight: 600;
+            color: var(--primary);
+            border: 1px solid var(--border-color);
+            border-radius: .5rem;
+            padding: .35rem .8rem;
+            text-decoration: none;
+            transition: all .15s ease;
+        }
+
+        .btn-viewall:hover {
+            background: var(--primary-light);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .receipt-type {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .receipt-type .type-ico {
+            width: 30px;
+            height: 30px;
+            border-radius: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .95rem;
+        }
+
+        .btn-eye {
+            width: 34px;
+            height: 34px;
+            border-radius: .5rem;
+            border: 1px solid var(--border-color);
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .15s ease;
+        }
+
+        .btn-eye:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .table-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .9rem 1.25rem;
+            border-top: 1px solid var(--border-color);
+            font-size: .8rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+
+        .pager {
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+        }
+
+        .pager span,
+        .pager a {
+            width: 32px;
+            height: 32px;
+            border-radius: .5rem;
+            border: 1px solid var(--border-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .pager .active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .pager .disabled {
+            opacity: .45;
+            pointer-events: none;
+        }
+
+        /* ============================================
+           DASHBOARD — quick actions
+        ============================================ */
+        .qa-item {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            padding: .7rem .85rem;
+            border: 1px solid var(--border-color);
+            border-radius: .625rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: .875rem;
+            transition: all .15s ease;
+        }
+
+        .qa-item:hover {
+            background: var(--primary-light);
+            border-color: var(--primary);
+            transform: translateX(2px);
+        }
+
+        .qa-item .qa-ico {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border-radius: .55rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+        }
+
+        .qa-item .qa-arrow {
+            margin-left: auto;
+            color: var(--text-muted);
+            font-size: .85rem;
+        }
+
+        /* ============================================
+           DASHBOARD — featured property
+        ============================================ */
+        .property-feature {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .property-thumb {
+            width: 92px;
+            height: 78px;
+            min-width: 92px;
+            border-radius: .65rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, .92);
+            font-size: 2rem;
+            overflow: hidden;
+        }
+
+        .property-feature .prop-addr {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: .9rem;
+        }
+
+        .property-feature .prop-meta {
+            font-size: .8rem;
+            color: var(--text-muted);
+            margin-top: .15rem;
+        }
+
+        .property-feature .prop-link {
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .property-feature .prop-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+           SIDEBAR — promo + help cards
+        ============================================ */
+        .sidebar-extra {
+            margin-top: auto;
+            padding: 1rem 1.15rem 1.5rem;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 90px);
+        }
+
+        .promo-card {
+            background: linear-gradient(150deg, #2563EB 0%, #1E40AF 100%);
+            border-radius: .85rem;
+            padding: 1.15rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .promo-card p {
+            font-size: .8rem;
+            line-height: 1.4;
+            margin: 0 0 .9rem;
+            color: rgba(255, 255, 255, .9);
+        }
+
+        .promo-card .promo-icon {
+            font-size: 1.75rem;
+            display: block;
+            margin-bottom: .5rem;
+        }
+
+        .promo-card .btn-upgrade {
+            display: block;
+            text-align: center;
+            background: #fff;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: .8rem;
+            padding: .5rem;
+            border-radius: .5rem;
+            text-decoration: none;
+        }
+
+        .help-card {
+            text-align: center;
+            color: var(--sidebar-text);
+        }
+
+        .help-card .help-title {
+            color: #fff;
+            font-weight: 600;
+            font-size: .82rem;
+        }
+
+        .help-card small {
+            font-size: .72rem;
+            display: block;
+            margin-bottom: .65rem;
+        }
+
+        .help-card .btn-help {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            border: 1px solid rgba(255, 255, 255, .18);
+            color: #fff;
+            border-radius: .5rem;
+            padding: .4rem .9rem;
+            font-size: .78rem;
+            text-decoration: none;
+            transition: all .15s ease;
+        }
+
+        .help-card .btn-help:hover {
+            background: rgba(255, 255, 255, .08);
+        }
+
+        @media (max-width: 768px) {
+            .top-search {
+                display: none;
+            }
+        }
     </style>
     @stack('styles')
 </head>
@@ -505,6 +1190,9 @@
             </a>
 
             <div class="nav-section">Administration</div>
+            <a href="{{ route('users.index') }}" class="nav-link {{ request()->is('users*') ? 'active' : '' }}">
+                <i class="bi bi-people"></i> User Management
+            </a>
             <a href="{{ route('register') }}" class="nav-link {{ request()->is('register') ? 'active' : '' }}">
                 <i class="bi bi-person-plus"></i> Register Admin
             </a>
@@ -524,6 +1212,21 @@
                 <i class="bi bi-shield-lock"></i> Security Deposits
             </a>
             @endif
+
+            <div class="sidebar-extra">
+                <div class="promo-card">
+                    <i class="bi bi-buildings-fill promo-icon"></i>
+                    <p>Keep your properties and receipts organized in one place.</p>
+                    <a href="{{ route('about') }}" class="btn-upgrade">Learn More <i class="bi bi-arrow-right"></i></a>
+                </div>
+                <div class="help-card">
+                    <div class="help-title"><i class="bi bi-headset me-1"></i> Need Help?</div>
+                    <small>We're here to assist you.</small>
+                    <a href="https://github.com/mohsin-rafique/property-management/issues" target="_blank" class="btn-help">
+                        <i class="bi bi-life-preserver"></i> Contact Support
+                    </a>
+                </div>
+            </div>
         </nav>
     </aside>
 
@@ -533,39 +1236,99 @@
     {{-- MAIN CONTENT --}}
     <div class="main-content">
         <div class="top-bar">
-            <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center gap-3 flex-grow-1">
                 <button class="btn btn-link d-md-none p-0 text-dark" onclick="document.getElementById('sidebar').classList.toggle('show')">
                     <i class="bi bi-list fs-4"></i>
                 </button>
-                <h5>@yield('title', 'Dashboard')</h5>
+                <h5 class="d-md-none mb-0">@yield('title', 'Dashboard')</h5>
+                <div class="top-search d-none d-md-block">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search anything..." aria-label="Search">
+                    <span class="kbd">⌘K</span>
+                </div>
             </div>
-            <div class="dropdown user-menu">
+            <div class="d-flex align-items-center gap-3">
+                <button type="button" class="notif-btn" aria-label="Notifications">
+                    <i class="bi bi-bell"></i>
+                    <span class="notif-dot">3</span>
+                </button>
+                <div class="dropdown user-menu">
                 <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                     <div class="user-avatar">
                         {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                     </div>
-                    {{ auth()->user()->name }}
+                    <span class="user-name d-none d-sm-block text-start">
+                        <span class="name d-block">{{ auth()->user()->name }}</span>
+                        <span class="role">{{ ucfirst(auth()->user()->role ?? 'User') === 'Admin' ? 'Administrator' : ucfirst(auth()->user()->role ?? 'User') }}</span>
+                    </span>
                     <i class="bi bi-chevron-down" style="font-size:.7rem"></i>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><span class="dropdown-item-text text-muted small">{{ auth()->user()->email }}</span></li>
-                    <li><span class="dropdown-item-text"><span class="badge badge-info">{{ ucfirst(auth()->user()->role ?? 'user') }}</span></span></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="{{ route('profile.show') }}">
-                            <i class="bi bi-person-gear me-2"></i>Profile Settings
+                <div class="dropdown-menu dropdown-menu-end profile-menu">
+                    <div class="pm-header">
+                        <div class="pm-avatar">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</div>
+                        <div class="min-w-0">
+                            <div class="pm-name">{{ auth()->user()->name }}</div>
+                            <div class="pm-role">{{ ucfirst(auth()->user()->role ?? 'User') === 'Admin' ? 'Administrator' : ucfirst(auth()->user()->role ?? 'User') }}</div>
+                            <div class="pm-email">{{ auth()->user()->email }}</div>
+                        </div>
+                    </div>
+
+                    <div class="pm-body">
+                        <a class="pm-item" href="{{ route('profile.show') }}">
+                            <span class="pm-ico"><i class="bi bi-person"></i></span>
+                            <span class="pm-text">
+                                <span class="pm-title d-block">Profile Settings</span>
+                                <span class="pm-desc">Manage your profile &amp; preferences</span>
+                            </span>
+                            <i class="bi bi-chevron-right pm-arrow"></i>
                         </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        <a class="pm-item" href="{{ route('profile.show') }}#change-password">
+                            <span class="pm-ico"><i class="bi bi-shield-lock"></i></span>
+                            <span class="pm-text">
+                                <span class="pm-title d-block">Account Security</span>
+                                <span class="pm-desc">Password, 2FA &amp; security options</span>
+                            </span>
+                            <i class="bi bi-chevron-right pm-arrow"></i>
+                        </a>
+                        <a class="pm-item" href="{{ route('profile.show') }}">
+                            <span class="pm-ico"><i class="bi bi-bell"></i></span>
+                            <span class="pm-text">
+                                <span class="pm-title d-block">Notification Preferences</span>
+                                <span class="pm-desc">Manage your notification settings</span>
+                            </span>
+                            <i class="bi bi-chevron-right pm-arrow"></i>
+                        </a>
+                        @if(auth()->user()->isAdmin())
+                        <a class="pm-item" href="{{ route('users.index') }}">
+                            <span class="pm-ico"><i class="bi bi-people"></i></span>
+                            <span class="pm-text">
+                                <span class="pm-title d-block">User Management</span>
+                                <span class="pm-desc">Manage users, roles &amp; access</span>
+                            </span>
+                            <i class="bi bi-chevron-right pm-arrow"></i>
+                        </a>
+                        @endif
+
+                        <div class="pm-divider"></div>
+
+                        <a class="pm-item logout" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <i class="bi bi-box-arrow-right me-2"></i>Logout
+                            <span class="pm-ico"><i class="bi bi-box-arrow-right"></i></span>
+                            <span class="pm-text">
+                                <span class="pm-title d-block">Logout</span>
+                                <span class="pm-desc">Sign out from your account</span>
+                            </span>
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
-                    </li>
-                </ul>
+                    </div>
+
+                    <div class="pm-premium">
+                        <div class="pm-premium-title"><i class="bi bi-star-fill"></i> Go Premium</div>
+                        <div class="pm-premium-sub">Unlock advanced features and insights.</div>
+                        <a href="{{ route('about') }}" class="btn-premium">Upgrade Now</a>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
 
@@ -579,6 +1342,17 @@
             @if(session('error'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <i class="bi bi-exclamation-triangle me-2"></i>{{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            @endif
+            @if($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle me-2"></i><strong>Please fix the following:</strong>
+                <ul class="mb-0 mt-2 ps-4">
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>
             @endif

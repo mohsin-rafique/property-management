@@ -27,7 +27,7 @@ class StoreElectricityReceiptRequest extends FormRequest
             'tenant_amount_in_words' => 'required|string|max:255',
             'payment_method' => 'required|in:cash,bank_transfer,cheque,online',
             'payment_date' => 'required|date',
-            'notes' => 'nullable|string|max:500',
+            'notes' => 'nullable|string|max:5000',
             'bill_reference' => 'nullable|string|max:100',
             'bill_attachment' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:25600',
             'submeter_previous_photo' => 'nullable|file|mimes:jpg,jpeg,png|max:25600',

@@ -216,7 +216,9 @@
 
                     <div class="mb-3">
                         <label for="notes" class="form-label">Notes</label>
-                        <textarea name="notes" id="notes" rows="2" class="form-control">{{ old('notes', $electricityReceipt->notes) }}</textarea>
+                        <textarea name="notes" id="notes" rows="4"
+                            class="form-control @error('notes') is-invalid @enderror">{{ old('notes', $electricityReceipt->notes) }}</textarea>
+                        @error('notes')<div class="invalid-feedback">{{ $message }}</div>@enderror
                     </div>
 
                     <hr class="my-4">

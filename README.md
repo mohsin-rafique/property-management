@@ -25,12 +25,12 @@
 
 <br/>
 
-[**Live Demo**](https://github.com/mohsin-rafique/property-management) &nbsp;•&nbsp;
 [**Features**](#-features) &nbsp;•&nbsp;
 [**Screenshots**](#-screenshots) &nbsp;•&nbsp;
 [**Quick Start**](#-quick-start) &nbsp;•&nbsp;
 [**Tech Stack**](#-tech-stack) &nbsp;•&nbsp;
 [**Roadmap**](#-roadmap) &nbsp;•&nbsp;
+[**Changelog**](CHANGELOG.md) &nbsp;•&nbsp;
 [**Hire Me**](#-hire-the-author)
 
 <br/>
@@ -49,7 +49,7 @@
 
 <br/>
 
-## What Is This?
+## 📋 What Is This?
 
 **Property Management System** is a free, self-hosted web application that replaces messy spreadsheets and paper records with a clean, role-based digital platform. It is designed for:
 
@@ -63,7 +63,7 @@ Built with **Laravel 12**, **PHP 8.2+**, **Bootstrap 5**, and **DomPDF**, the sy
 
 ---
 
-## The Problem It Solves
+## 🎯 The Problem It Solves
 
 Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. This creates:
 
@@ -80,17 +80,18 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 
 ---
 
-## Features
+## ✨ Features
 
-### Dashboard & Analytics
+### 📊 Dashboard & Analytics
 
 - Live statistics: total properties, tenants, rent collected, deposits held
 - Current month rent collection at a glance
 - Recent activity feed across all modules
 - Occupancy overview (Vacant vs Occupied)
+- Featured property panel with tenant, monthly rent, and a jump link to the full record
 - Quick-action buttons for common tasks
 
-### Property Management
+### 🏠 Property Management
 
 - Add unlimited rental properties
 - Assign owners and tenants per property
@@ -98,21 +99,21 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 - Automatic rate history log when rent changes
 - Configurable maintenance split percentage per property
 
-### Owner Management
+### 👤 Owner Management
 
 - Full create / read / update / delete with linked user account creation
 - Owner-scoped data isolation (owners see only their own properties)
 - View all receipts per owner
 - Contact details and CNIC tracking
 
-### Tenant Management
+### 👥 Tenant Management
 
 - Full CRUD with automatic user account creation
 - Dedicated read-only tenant portal
 - Tenants view their own receipts and download PDFs without contacting the landlord
 - Payment history and deposit status visible to tenant
 
-### Rent Receipts
+### 🧾 Rent Receipts
 
 - One-click monthly receipt generation
 - Amount in words auto-generated in Pakistani format (Lakh / Crore)
@@ -120,7 +121,7 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 - Payment method tracking: Cash, Bank Transfer, Cheque, Online
 - Professional PDF download matching standard rental formats
 
-### Maintenance Bill Receipts
+### 🔧 Maintenance Bill Receipts
 
 - Automatic owner/tenant cost-split calculation
 - Configurable split percentage (default 50/50, set per property)
@@ -129,7 +130,7 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 - Bill reference number tracking
 - Professional PDF download
 
-### Electricity Bill Receipts
+### ⚡ Electricity Bill Receipts
 
 - Rate per unit auto-calculated from WAPDA bill (Total Payable ÷ Main Meter Units)
 - Main meter and sub-meter reading entry
@@ -137,9 +138,10 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 - Live billing breakdown: tenant portion vs owner portion
 - Sub-meter photo evidence upload (previous and current)
 - Original WAPDA bill attachment
+- Free-form notes field (up to 5,000 characters) for carry-forward and adjustment explanations
 - Detailed cost distribution PDF
 
-### Security Deposits
+### 💰 Security Deposits
 
 - Record deposits in configurable months of rent
 - Add deductions with written reasons and photo proof
@@ -148,7 +150,20 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 - Status progression: **Held → Partially Refunded → Fully Refunded**
 - Complete deduction history per deposit
 
-### Role-Based Access Control
+### 🧑‍💼 User & Team Management
+
+- Admin-managed user accounts (create / edit / delete)
+- Assign roles per user: Admin, Owner, or Tenant
+- Public registration disabled — accounts are provisioned by an admin only
+- Foundation for multi-admin / team-seat access
+
+### 🪪 Profile & Account Settings
+
+- Self-service profile management for every logged-in user
+- Update personal information (name, email, contact details)
+- Secure password change with current-password verification
+
+### 🔐 Role-Based Access Control
 
 | Role | Access Level |
 |---|---|
@@ -156,7 +171,7 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 | **Owner** | Own properties, own receipts, own tenant records only |
 | **Tenant** | Read-only portal — own receipts, own deposit status |
 
-### PDF Generation
+### 📄 PDF Generation
 
 - Professional receipt layout matching standard Pakistani rental formats
 - Acknowledgment text and signature section included
@@ -165,11 +180,19 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 - Notes and bill references included
 - Download from any receipt detail page
 
+### 🧭 Forms & Interface
+
+- Modern sidebar navigation with a role-aware menu
+- Profile dropdown with account, security, and (for admins) user-management shortcuts
+- Live auto-calculation previews on the receipt forms before you submit
+- Every form reports its validation errors as a summary at the top of the page
+  plus inline messages on each field — no silent failed submissions
+
 <br/>
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
 <p align="center">
   <img src="docs/screenshots/login.png" alt="Login Page" width="100%" />
@@ -234,9 +257,16 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 
 <br/>
 
+<p align="center">
+  <img src="docs/screenshots/profile-settings.png" alt="Profile Settings" width="100%" />
+  <br/><sub><b>Profile & Account Settings</b> — Update personal info and change password securely</sub>
+</p>
+
+<br/>
+
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 <div align="center">
 
@@ -259,7 +289,7 @@ Most landlords still track rent in WhatsApp chats, phone notes, or Excel files. 
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 ### Requirements
 
@@ -367,7 +397,7 @@ Open `http://localhost:8000`
 
 ---
 
-## Production Deployment
+## 🌐 Production Deployment
 
 ### Apache Virtual Host
 
@@ -432,7 +462,7 @@ php artisan view:cache
 
 ---
 
-## Security
+## 🔒 Security
 
 This project follows Laravel and OWASP security best practices:
 
@@ -455,7 +485,7 @@ This project follows Laravel and OWASP security best practices:
 
 ---
 
-## Business Logic Reference
+## 🧮 Business Logic Reference
 
 ### Electricity Bill Calculation
 
@@ -485,7 +515,7 @@ Status Flow       = Held → Partially Refunded → Fully Refunded
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 property-management/
@@ -493,6 +523,8 @@ property-management/
 │   ├── Http/
 │   │   ├── Controllers/
 │   │   │   ├── HomeController.php                  # Dashboard
+│   │   │   ├── UserController.php                   # Admin user management
+│   │   │   ├── ProfileController.php                # Self-service profile/password
 │   │   │   ├── OwnerController.php
 │   │   │   ├── TenantController.php
 │   │   │   ├── PropertyController.php
@@ -524,6 +556,8 @@ property-management/
 ├── resources/views/
 │   ├── layouts/app.blade.php                       # Main layout + sidebar
 │   ├── auth/                                       # Login / register
+│   ├── users/                                      # Admin user management
+│   ├── profile/                                    # Profile & account settings
 │   ├── owners/                                     # Owner CRUD
 │   ├── tenants/                                    # Tenant CRUD
 │   ├── properties/                                 # Property CRUD
@@ -544,7 +578,7 @@ property-management/
 
 ---
 
-## Usage Guide
+## 📖 Usage Guide
 
 ### Generating a Rent Receipt
 
@@ -585,7 +619,7 @@ property-management/
 
 ---
 
-## Useful Commands
+## ⚙️ Useful Commands
 
 ```bash
 # Start development servers (Laravel + Vite concurrently)
@@ -614,7 +648,7 @@ php artisan migrate:fresh --seed
 
 ---
 
-## Roadmap
+## 🗺️ Roadmap
 
 - [ ] Search and filter on all listing pages
 - [ ] Monthly and yearly financial summary reports
@@ -635,7 +669,7 @@ Want to contribute to a roadmap item? See [Contributing](#-contributing).
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome and greatly appreciated. Every improvement — from a typo fix to a full feature — helps the community.
 
@@ -670,7 +704,7 @@ Please [open an issue](https://github.com/mohsin-rafique/property-management/iss
 
 ---
 
-## Hire the Author
+## 💼 Hire the Author
 
 <div align="center">
 
@@ -708,7 +742,7 @@ production-ready web applications in **Laravel**, **PHP**, **MySQL**, and **Boot
 
 ---
 
-## Support This Project
+## ❤️ Support This Project
 
 If this project saves you time, helps you learn, or serves as a foundation for your own product — consider supporting its continued development.
 
@@ -724,7 +758,18 @@ If this project saves you time, helps you learn, or serves as a foundation for y
 
 ---
 
-## License
+## 📝 Changelog
+
+All notable changes are documented in [CHANGELOG.md](CHANGELOG.md), following the
+[Keep a Changelog](https://keepachangelog.com/) format and [Semantic Versioning](https://semver.org/).
+
+The current release is **v1.1.0** — see the [Roadmap](#-roadmap) for what's coming next.
+
+<br/>
+
+---
+
+## 📄 License
 
 This project is open-source software licensed under the [MIT License](LICENSE).
 
@@ -752,7 +797,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 ---
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - [Laravel](https://laravel.com/) — The PHP framework for web artisans
 - [Bootstrap](https://getbootstrap.com/) — The world's most popular front-end toolkit

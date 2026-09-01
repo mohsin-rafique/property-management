@@ -15,7 +15,7 @@
     <a href="{{ route('maintenance-receipts.index') }}" class="text-decoration-none small">
         <i class="bi bi-arrow-left me-1"></i> Back to Maintenance Receipts
     </a>
-    <div class="d-flex gap-2">
+    <div class="d-flex gap-2 align-items-center">
         <a href="{{ route('maintenance-receipts.edit', $maintenanceReceipt) }}" class="btn btn-sm btn-outline-primary">
             <i class="bi bi-pencil me-1"></i> Edit
         </a>

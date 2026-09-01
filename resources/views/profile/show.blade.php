@@ -98,7 +98,7 @@
         </div>
 
         {{-- Change Password --}}
-        <div class="card mb-4">
+        <div class="card mb-4" id="change-password">
             <div class="card-header">
                 <i class="bi bi-lock me-2"></i>Change Password
             </div>
